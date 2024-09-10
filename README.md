@@ -12,7 +12,6 @@ Pour ouvrir un fichier, Python fournit la fonction intégrée `open()`. Cette fo
 - `'r'`: lire un fichier (lecture seule, par défaut).
 - `'w'`: écrire dans un fichier (écrase le fichier s'il existe déjà).
 - `'a'`: ajouter à la fin d'un fichier existant.
-- `'b'`: mode binaire (à utiliser en combinaison avec les autres modes).
 - `'x'`: crée un fichier, échoue si le fichier existe déjà.
 
 Exemple d’ouverture d’un fichier en mode lecture :
@@ -75,15 +74,8 @@ with open('exemple.txt', 'r') as fichier:
     contenu = fichier.read()
 ```
 
-### 6. Gestion des fichiers binaires
-Pour travailler avec des fichiers binaires (images, fichiers audio, etc.), vous devez ouvrir le fichier en mode binaire (`'b'`). Par exemple, pour lire un fichier binaire :
 
-```python
-with open('image.png', 'rb') as fichier:
-    contenu_binaire = fichier.read()
-```
-
-### 7. Manipulation avancée des fichiers
+### 6. Manipulation avancée des fichiers
 Python offre des bibliothèques comme `os` et `shutil` pour des opérations plus complexes telles que :
 
 - Supprimer un fichier : `os.remove('fichier.txt')`.
@@ -108,16 +100,147 @@ with open('mon_fichier.txt', 'a') as fichier:
     fichier.write("Troisième ligne ajoutée.\n")
 ```
 
-### Conclusion
+### 1. **Créer un Dossier**
 
-La gestion des fichiers en Python est intuitive grâce à la fonction `open()` et à l’utilisation de gestionnaires de contexte comme `with`. Ces outils facilitent les opérations de lecture, écriture et manipulation des fichiers tout en gérant efficacement les ressources du système.
+Pour créer un nouveau dossier, vous pouvez utiliser la fonction `mkdir()` du module `os` ou `pathlib`.
+
+#### Utilisation de `os` :
+```python
+import os
+
+# Créer un nouveau dossier
+os.mkdir('nouveau_dossier')
+```
+
+#### Utilisation de `pathlib` :
+```python
+from pathlib import Path
+
+# Créer un nouveau dossier
+Path('nouveau_dossier').mkdir()
+```
+
+### 2. **Supprimer un Dossier**
+
+Pour supprimer un dossier, vous pouvez utiliser `rmdir()` de `os` ou `pathlib`.
+
+#### Utilisation de `os` :
+```python
+import os
+
+# Supprimer un dossier vide
+os.rmdir('dossier_a_supprimer')
+```
+
+#### Utilisation de `pathlib` :
+```python
+from pathlib import Path
+
+# Supprimer un dossier vide
+Path('dossier_a_supprimer').rmdir()
+```
+
+Pour supprimer un dossier non vide, vous pouvez utiliser `shutil.rmtree()` :
+
+```python
+import shutil
+
+# Supprimer un dossier non vide
+shutil.rmtree('dossier_non_vide')
+```
+
+### 3. **Lister le Contenu d'un Dossier**
+
+Pour lister le contenu d'un dossier, vous pouvez utiliser `os.listdir()` ou `pathlib.Path.iterdir()`.
+
+#### Utilisation de `os` :
+```python
+import os
+
+# Lister les fichiers et dossiers dans un répertoire
+contenu = os.listdir('dossier_existant')
+print(contenu)
+```
+
+#### Utilisation de `pathlib` :
+```python
+from pathlib import Path
+
+# Lister les fichiers et dossiers dans un répertoire
+contenu = [item for item in Path('dossier_existant').iterdir()]
+print(contenu)
+```
+
+### 4. **Naviguer dans les Dossiers**
+
+Pour changer le répertoire de travail, utilisez `os.chdir()`.
+
+#### Utilisation de `os` :
+```python
+import os
+
+# Changer le répertoire de travail
+os.chdir('nouveau_dossier')
+```
+
+Pour obtenir le répertoire de travail actuel, utilisez `os.getcwd()`.
+
+#### Utilisation de `os` :
+```python
+import os
+
+# Obtenir le répertoire de travail actuel
+repertoire_actuel = os.getcwd()
+print(repertoire_actuel)
+```
+
+### 5. **Créer des Dossiers Intermédiaires**
+
+Pour créer des répertoires intermédiaires, utilisez `os.makedirs()` ou `pathlib.Path.mkdir()` avec `parents=True`.
+
+#### Utilisation de `os` :
+```python
+import os
+
+# Créer un répertoire avec des sous-répertoires
+os.makedirs('parent/enfant', exist_ok=True)
+```
+
+#### Utilisation de `pathlib` :
+```python
+from pathlib import Path
+
+# Créer un répertoire avec des sous-répertoires
+Path('parent/enfant').mkdir(parents=True, exist_ok=True)
+```
+
+### 6. **Copier un Dossier**
+
+Pour copier un dossier, utilisez `shutil.copytree()`.
+
+```python
+import shutil
+
+# Copier un dossier et son contenu
+shutil.copytree('dossier_source', 'dossier_destination')
+```
+
+### 7. **Déplacer un Dossier**
+
+Pour déplacer un dossier, utilisez `shutil.move()`.
+
+```python
+import shutil
+
+# Déplacer un dossier
+shutil.move('dossier_source', 'nouvel_emplacement/dossier_destination')
+```
+
+Ces opérations couvrent les besoins courants en gestion de dossiers en Python. Pour des tâches plus spécifiques, vous pourriez également explorer des modules tiers ou des fonctions plus avancées des modules standards.
 
 
-# Bibliothèque FileMa
 
-## Vue d'ensemble
 
-La bibliothèque `FileMa` fournit des utiliteurs pour la gestion des fichiers et des répertoires en Python. Elle comprend des fonctions pour créer, supprimer, renommer, copier des fichiers et des répertoires, ainsi que pour lire le contenu des fichiers, afficher les structures des répertoires, et plus encore. La bibliothèque utilise une sortie terminal colorée pour un retour visuel amélioré.
 
 ## Installation
 
