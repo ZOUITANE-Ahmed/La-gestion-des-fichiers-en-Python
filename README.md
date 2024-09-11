@@ -8,10 +8,11 @@ La gestion des fichiers en Python consiste à ouvrir, lire, écrire et manipuler
 ### 1. Ouvrir un fichier
 La fonction intégrée `open()` permet d'ouvrir un fichier. Voici les modes couramment utilisés :
 
-- `'x'`: crée un fichier, échoue si le fichier existe déjà.
-- `'w'`: écrire dans un fichier (écrase le fichier existant).
-- `'a'`: ajouter à un fichier existant.
-- `'r'`: lire un fichier (lecture seule, par défaut).
+- `'x'`: Create | crée un fichier, échoue si le fichier existe déjà.
+- `'w'`: write | écrire dans un fichier (écrase le fichier existant).
+- `'a'`: append | ajouter à un fichier existant.
+- `'r'`: read  | lire un fichier (lecture seule, par défaut).
+- `'r+'`:  read and write / lecture et ecriture .
 
 ### 2. Écrire dans un fichier
 Pour écrire ou ajouter du contenu dans un fichier, vous devez utiliser les modes `'w'`, `'a'` ou `'x'`.
