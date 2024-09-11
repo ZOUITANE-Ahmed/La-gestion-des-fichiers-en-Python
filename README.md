@@ -9,38 +9,14 @@ Voici les étapes et les principales opérations pour gérer des fichiers en Pyt
 ### 1. Ouvrir un fichier
 Pour ouvrir un fichier, Python fournit la fonction intégrée `open()`. Cette fonction prend deux arguments principaux : le nom du fichier et le mode d'ouverture. Voici quelques modes couramment utilisés :
 
-- `'r'`: lire un fichier (lecture seule, par défaut).
+- `'x'`: crée un fichier, échoue si le fichier existe déjà.
 - `'w'`: écrire dans un fichier (écrase le fichier s'il existe déjà).
 - `'a'`: ajouter à la fin d'un fichier existant.
-- `'x'`: crée un fichier, échoue si le fichier existe déjà.
+- `'r'`: lire un fichier (lecture seule, par défaut).
 
-Exemple d’ouverture d’un fichier en mode lecture :
-
-```python
-fichier = open('exemple.txt', 'r')
 ```
 
-### 2. Lire un fichier
-Une fois le fichier ouvert, vous pouvez lire son contenu de plusieurs façons :
-
-- `read()`: lire tout le contenu du fichier.
-- `readline()`: lire une seule ligne du fichier.
-- `readlines()`: lire toutes les lignes et les stocker dans une liste.
-
-Exemples :
-
-```python
-# Lire tout le fichier
-contenu = fichier.read()
-
-# Lire une ligne
-ligne = fichier.readline()
-
-# Lire toutes les lignes sous forme de liste
-lignes = fichier.readlines()
-```
-
-### 3. Écrire dans un fichier
+### 2. Écrire dans un fichier
 Pour écrire dans un fichier, vous devez ouvrir le fichier en mode `'w'` (écriture), `'a'` (ajout) ou `'x'` (création). Si le fichier n'existe pas, Python le crée automatiquement (sauf pour `'x'` où il échouera).
 
 Exemple d'écriture :
@@ -57,12 +33,40 @@ fichier = open('exemple.txt', 'a')
 fichier.write("Nouvelle ligne ajoutée.\n")
 ```
 
-### 4. Fermer un fichier
+### 3. Fermer un fichier
 Il est important de fermer le fichier après avoir terminé son utilisation pour libérer les ressources et s'assurer que les données sont correctement écrites. Vous pouvez utiliser la méthode `close()` :
 
 ```python
 fichier.close()
 ```
+  
+
+
+### 4. Lire un fichier
+Une fois le fichier ouvert, vous pouvez lire son contenu de plusieurs façons :
+
+Exemple d’ouverture d’un fichier en mode lecture :
+
+```python
+fichier = open('exemple.txt', 'r')
+```
+
+- `read()`: lire tout le contenu du fichier.
+- `readline()`: lire une seule ligne du fichier.
+- `readlines()`: lire toutes les lignes et les stocker dans une liste.
+
+Exemples :
+
+```python
+# Lire tout le fichier
+contenu = fichier.read()
+
+# Lire une ligne
+ligne = fichier.readline()
+
+# Lire toutes les lignes sous forme de liste
+lignes = fichier.readlines()
+
 
 ### 5. Utiliser le gestionnaire de contexte (`with`)
 Python offre une manière plus élégante et sécurisée de gérer les fichiers en utilisant le mot-clé `with`. Cela garantit que le fichier est automatiquement fermé après l'opération, même si une exception se produit.
