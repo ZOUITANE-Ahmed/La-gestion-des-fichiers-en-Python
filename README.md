@@ -25,12 +25,13 @@ Exemple d'écriture :
 fichier = open('exemple.txt', 'w')
 fichier.write("Ceci est un texte exemple.\n")
 ```
-
+```
 Pour ajouter du contenu à un fichier sans écraser l'existant :
 
 ```python
 fichier = open('exemple.txt', 'a')
 fichier.write("Nouvelle ligne ajoutée.\n")
+```
 ```
 
 ### 3. Fermer un fichier
@@ -40,7 +41,7 @@ Il est important de fermer le fichier après avoir terminé son utilisation pour
 fichier.close()
 ```
   
-
+```
 
 ### 4. Lire un fichier
 Une fois le fichier ouvert, vous pouvez lire son contenu de plusieurs façons :
@@ -50,7 +51,7 @@ Exemple d’ouverture d’un fichier en mode lecture :
 ```python
 fichier = open('exemple.txt', 'r')
 ```
-
+```
 - `read()`: lire tout le contenu du fichier.
 - `readline()`: lire une seule ligne du fichier.
 - `readlines()`: lire toutes les lignes et les stocker dans une liste.
@@ -78,7 +79,7 @@ with open('exemple.txt', 'r') as fichier:
     contenu = fichier.read()
 ```
 
-
+```
 ### 6. Manipulation avancée des fichiers
 Python offre des bibliothèques comme `os` et `shutil` pour des opérations plus complexes telles que :
 
