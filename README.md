@@ -12,10 +12,18 @@ La fonction intégrée `open()` permet d'ouvrir un fichier. Voici les modes cour
 - `'w'`: write | écrire dans un fichier (écrase le fichier existant).
 - `'a'`: append | ajouter à un fichier existant.
 - `'r'`: read  | lire un fichier (lecture seule, par défaut).
-- `'r+'`:  read and write / lecture et ecriture .
+- `'r+'`:  read and write | lecture et ecriture .
+
+### 2. crée un fichier
+crée un fichier, échoue si le fichier existe déjà, vous devez utiliser les modes  `'x'`.
+
+Exemple  créetion :
+```python
+open('exemple.txt', 'x')
+```
 
 ### 2. Écrire dans un fichier
-Pour écrire ou ajouter du contenu dans un fichier, vous devez utiliser les modes `'w'`, `'a'` ou `'x'`.
+Pour écrire ou ajouter du contenu dans un fichier, vous devez utiliser les modes `'w'`, `'a'`.
 
 Exemple d'écriture :
 ```python
