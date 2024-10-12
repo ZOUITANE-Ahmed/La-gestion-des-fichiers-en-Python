@@ -5,7 +5,7 @@ La gestion des fichiers en Python consiste à ouvrir, lire, écrire et manipuler
 
 ## Principales opérations sur les fichiers
 
-### 1. Ouvrir un fichier
+### A. Ouvrir un fichier
 La fonction intégrée `open()` permet d'ouvrir un fichier. Voici les modes couramment utilisés :
 
 - `'x'`: Create | crée un fichier, échoue si le fichier existe déjà.
@@ -14,13 +14,43 @@ La fonction intégrée `open()` permet d'ouvrir un fichier. Voici les modes cour
 - `'r'`: read  | lire un fichier (lecture seule, par défaut).
 - `'r+'`:  read and write | lecture et ecriture .
 
-### 2. crée un fichier
+### 1. crée un fichier
 crée un fichier, échoue si le fichier existe déjà, vous devez utiliser les modes  `'x'`.
 
 Exemple  créetion :
 ```python
 open('exemple.txt', 'x')
 ```
+**Chapitre 2 : Chemin relatif et chemin absolu (1:30 - 3:00)**  
+Voyons maintenant la différence entre un chemin relatif et un chemin absolu.
+
+- **Chemin relatif** : Le chemin relatif indique l’emplacement du fichier par rapport au script Python en cours d'exécution.
+
+Exemple de chemin relatif :
+
+```python
+# Fichier dans le même répertoire que le script
+with open("exemple.txt", "r") as fichier:
+    print(fichier.read())
+```
+
+Ici, le fichier `exemple.txt` est situé dans le même dossier que le script Python. C'est un chemin relatif, car il ne donne pas l’emplacement complet, seulement la position par rapport à l’emplacement du script.
+
+---
+
+- **Chemin absolu** : Le chemin absolu donne l’emplacement complet du fichier, en commençant depuis la racine du système.
+
+Exemple de chemin absolu :
+
+```python
+# Fichier situé à un emplacement absolu
+with open("/home/utilisateur/documents/exemple.txt", "r") as fichier:
+    print(fichier.read())
+```
+
+Dans ce cas, le chemin commence depuis la racine du système (`/` sur Linux/macOS, ou `C:\` sur Windows) et donne la position exacte du fichier `exemple.txt`.
+
+La différence entre les deux est que le chemin absolu sera toujours valide, peu importe où le script est exécuté, tandis que le chemin relatif dépend de l’emplacement du script.
 
 ### 2. Écrire dans un fichier
 Pour écrire ou ajouter du contenu dans un fichier, vous devez utiliser les modes `'w'`, `'a'`.
