@@ -21,7 +21,7 @@ Exemple  créetion :
 ```python
 open('exemple.txt', 'x')
 ```
-**Chapitre 2 : Chemin relatif et chemin absolu (1:30 - 3:00)**  
+**1.1 Chemin relatif et chemin absolu (1:30 - 3:00)**  
 Voyons maintenant la différence entre un chemin relatif et un chemin absolu.
 
 - **Chemin relatif** : Le chemin relatif indique l’emplacement du fichier par rapport au script Python en cours d'exécution.
@@ -34,7 +34,7 @@ with open("exemple.txt", "r") as fichier:
     print(fichier.read())
 ```
 
-Ici, le fichier `exemple.txt` est situé dans le même dossier que le script Python. C'est un chemin relatif, car il ne donne pas l’emplacement complet, seulement la position par rapport à l’emplacement du script.
+Ici, le fichier `exemple.txt` est situé dans le même dossier que le script Python. C'est un chemin relatif.
 
 ---
 
