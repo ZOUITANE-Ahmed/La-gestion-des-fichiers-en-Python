@@ -1,7 +1,7 @@
 
 # La gestion des fichiers en Python
 
-La gestion des fichiers en Python consiste à ouvrir, lire, écrire et manipuler des fichiers (comme les fichiers texte ou binaire) à l'aide de plusieurs fonctions et méthodes intégrées. Python offre une approche simple et efficace pour manipuler les fichiers.
+La gestion des fichiers en Python implique plusieurs opérations comme la création, la lecture, l'écriture, la modification et la suppression de fichiers. Python offre des modules intégrés comme os et shutil pour manipuler les fichiers et les répertoires, ainsi que des méthodes pour gérer leur contenu.
 
 ## Principales opérations sur les fichiers
 
