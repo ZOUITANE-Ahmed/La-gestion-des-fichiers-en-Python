@@ -9,10 +9,10 @@ La gestion des fichiers en Python implique plusieurs opérations comme la créat
 La fonction intégrée `open()` permet d'ouvrir un fichier. Voici les modes couramment utilisés :
 
 - `'x'`: Create | crée un fichier, échoue si le fichier existe déjà.
-- `'w'`: write | écrire dans un fichier (écrase le fichier existant).
-- `'a'`: append | ajouter à un fichier existant.
-- `'r'`: read  | lire un fichier (lecture seule, par défaut).
-- `'r+'`:  read and write | lecture et ecriture .
+- `'w'`: write | Écriture. Crée un nouveau fichier ou écrase le fichier existant.
+- `'a'`: append | Ajoute les données à la fin du fichier existant.
+- `'r'`: read  |Lecture seule. Le fichier doit exister.
+- `'r+'`:  read and write | Lecture et écriture. Le fichier doit exister.
 
 ### 1. crée un fichier
 crée un fichier, échoue si le fichier existe déjà, vous devez utiliser les modes  `'x'`.
