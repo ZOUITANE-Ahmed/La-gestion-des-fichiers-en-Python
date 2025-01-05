@@ -12,7 +12,9 @@ La fonction intégrée `open()` permet d'ouvrir un fichier. Voici les modes cour
 - `'w'`: write | Écriture. Crée un nouveau fichier ou écrase le fichier existant.
 - `'a'`: append | Ajoute les données à la fin du fichier existant.
 - `'r'`: read  |Lecture seule. Le fichier doit exister.
-- `'r+'`:  read and write | Lecture et écriture. Le fichier doit exister.
+- `'r+'`: read and write | Lecture et écriture. Le fichier doit exister.
+- `'W+'`: Lecture et écriture. Crée un nouveau fichier ou écrase le fichier existant.
+- `'r+'`: Lecture et ajout. Ajoute les données à la fin du fichier existant.
 
 ### 1. crée un fichier
 crée un fichier, échoue si le fichier existe déjà, vous devez utiliser les modes  `'x'`.
